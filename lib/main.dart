@@ -49,18 +49,48 @@ class _MyHomePageState extends State<MyHomePage> {
         SizedBox gap4 = gap('height', 2, orientation);
         SizedBox gap5 = gap('height', 3, orientation);
         SizedBox gap6 = gap('height', 4, orientation);
+        OutlinedButton buttonRe =
+            buttons('RESET', orientation, setstate: setState);
+        OutlinedButton buttonEr =
+            buttons('ERASE', orientation, setstate: setState);
+        OutlinedButton buttonPow =
+            buttons('^', orientation, setstate: setState);
+        OutlinedButton buttonOpenParen =
+            buttons('(', orientation, setstate: setState);
+        OutlinedButton buttonCloseParen =
+            buttons(')', orientation, setstate: setState);
+        OutlinedButton buttonEqual =
+            buttons('=', orientation, setstate: setState);
+        OutlinedButton buttonAdd =
+            buttons('+', orientation, setstate: setState);
+        OutlinedButton buttonSub =
+            buttons('-', orientation, setstate: setState);
+        OutlinedButton buttonMul =
+            buttons('*', orientation, setstate: setState);
+        OutlinedButton buttonDiv =
+            buttons('/', orientation, setstate: setState);
+        OutlinedButton buttonMod =
+            buttons('%', orientation, setstate: setState);
+        OutlinedButton buttonDot =
+            buttons('.', orientation, setstate: setState);
+
         OutlinedButton button0 = buttons('0', orientation, setstate: setState);
+        OutlinedButton button1 = buttons('1', orientation, setstate: setState);
+        OutlinedButton button2 = buttons('2', orientation, setstate: setState);
+        OutlinedButton button3 = buttons('3', orientation, setstate: setState);
+        OutlinedButton button4 = buttons('4', orientation, setstate: setState);
+        OutlinedButton button5 = buttons('5', orientation, setstate: setState);
+        OutlinedButton button6 = buttons('6', orientation, setstate: setState);
+        OutlinedButton button7 = buttons('7', orientation, setstate: setState);
+        OutlinedButton button8 = buttons('8', orientation, setstate: setState);
+        OutlinedButton button9 = buttons('9', orientation, setstate: setState);
 
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Row(
               mainAxisSize: MainAxisSize.min,
-              children: [
-                buttons('RESET', orientation, setstate: setState),
-                gap1,
-                buttons('ERASE', orientation, setstate: setState),
-              ],
+              children: [buttonRe, gap1, buttonEr],
             ),
             gap3,
             caculateBox(orientation),
@@ -69,114 +99,82 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisSize: MainAxisSize.min,
               children: orientation == Orientation.portrait
                   ? [
-                      buttons('^', orientation, setstate: setState),
+                      buttonPow,
                       gap2,
-                      buttons('(', orientation, setstate: setState),
+                      buttonOpenParen,
                       gap2,
-                      buttons(')', orientation, setstate: setState),
+                      buttonCloseParen,
                       gap2,
-                      buttons('=', orientation, setstate: setState),
+                      buttonEqual
                     ]
                   : [
-                      buttons('+', orientation, setstate: setState),
+                      buttonAdd,
                       gap2,
-                      buttons('^', orientation, setstate: setState),
+                      buttonPow,
                       gap2,
-                      buttons('(', orientation, setstate: setState),
+                      buttonOpenParen,
                       gap2,
-                      buttons(')', orientation, setstate: setState),
+                      buttonCloseParen,
                       gap2,
-                      buttons('=', orientation, setstate: setState),
+                      buttonEqual
                     ],
             ),
             gap5,
             Row(
               mainAxisSize: MainAxisSize.min,
               children: orientation == Orientation.portrait
-                  ? [
-                      buttons('7', orientation, setstate: setState),
-                      gap2,
-                      buttons('8', orientation, setstate: setState),
-                      gap2,
-                      buttons('9', orientation, setstate: setState),
-                      gap2,
-                      buttons('+', orientation, setstate: setState),
-                    ]
+                  ? [button7, gap2, button8, gap2, button9, gap2, buttonAdd]
                   : [
-                      buttons('-', orientation, setstate: setState),
+                      buttonSub,
                       gap2,
-                      buttons('7', orientation, setstate: setState),
+                      button7,
                       gap2,
-                      buttons('8', orientation, setstate: setState),
+                      button8,
                       gap2,
-                      buttons('9', orientation, setstate: setState),
+                      button9,
                       gap2,
-                      buttons('/', orientation, setstate: setState),
+                      buttonDiv
                     ],
             ),
             gap5,
             Row(
               mainAxisSize: MainAxisSize.min,
               children: orientation == Orientation.portrait
-                  ? [
-                      buttons('4', orientation, setstate: setState),
-                      gap2,
-                      buttons('5', orientation, setstate: setState),
-                      gap2,
-                      buttons('6', orientation, setstate: setState),
-                      gap2,
-                      buttons('-', orientation, setstate: setState),
-                    ]
+                  ? [button4, gap2, button5, gap2, button6, gap2, buttonSub]
                   : [
-                      buttons('*', orientation, setstate: setState),
+                      buttonMul,
                       gap2,
-                      buttons('4', orientation, setstate: setState),
+                      button4,
                       gap2,
-                      buttons('5', orientation, setstate: setState),
+                      button5,
                       gap2,
-                      buttons('6', orientation, setstate: setState),
+                      button6,
                       gap2,
-                      buttons('%', orientation, setstate: setState),
+                      buttonMod
                     ],
             ),
             gap5,
             Row(
               mainAxisSize: MainAxisSize.min,
               children: orientation == Orientation.portrait
-                  ? [
-                      buttons('1', orientation, setstate: setState),
-                      gap2,
-                      buttons('2', orientation, setstate: setState),
-                      gap2,
-                      buttons('3', orientation, setstate: setState),
-                      gap2,
-                      buttons('*', orientation, setstate: setState),
-                    ]
+                  ? [button1, gap2, button2, gap2, button3, gap2, buttonMul]
                   : [
-                      buttons('0', orientation, setstate: setState),
+                      button0,
                       gap2,
-                      buttons('1', orientation, setstate: setState),
+                      button1,
                       gap2,
-                      buttons('2', orientation, setstate: setState),
+                      button2,
                       gap2,
-                      buttons('3', orientation, setstate: setState),
+                      button3,
                       gap2,
-                      buttons('.', orientation, setstate: setState),
+                      buttonDot
                     ],
             ),
             gap6,
             Row(
               mainAxisSize: MainAxisSize.min,
               children: orientation == Orientation.portrait
-                  ? [
-                      buttons('%', orientation, setstate: setState),
-                      gap2,
-                      buttons('0', orientation, setstate: setState),
-                      gap2,
-                      buttons('.', orientation, setstate: setState),
-                      gap2,
-                      buttons('/', orientation, setstate: setState),
-                    ]
+                  ? [buttonMod, gap2, button0, gap2, buttonDot, gap2, buttonDiv]
                   : [],
             ),
           ],
