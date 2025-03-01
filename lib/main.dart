@@ -49,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SizedBox gap4 = gap('height', 2, orientation);
         SizedBox gap5 = gap('height', 3, orientation);
         SizedBox gap6 = gap('height', 4, orientation);
+        OutlinedButton button0 = buttons('0', orientation, setstate: setState);
 
         return Column(
           mainAxisSize: MainAxisSize.min,
