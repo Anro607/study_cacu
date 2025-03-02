@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'gs25.dart';
 import 'main.dart';
@@ -34,11 +35,10 @@ Container caculateBox(Orientation orientation) {
       image: DecorationImage(
           image: AssetImage('assets/nyang.jpg'),
           fit: BoxFit.fill,
-          colorFilter:
-              ColorFilter.mode(Colors.black.withAlpha(a), BlendMode.dstATop)),
+          colorFilter: ColorFilter.mode(Colors.black.withAlpha(GyaeSan25.to.alpha), BlendMode.dstATop)),
     ),
     child: Text(
-      gyesan,
+      GyaeSan25.to.expression,
       style: TextStyle(fontSize: 30, color: Color.fromARGB(255, 201, 183, 255)),
       textAlign: TextAlign.right,
       overflow: TextOverflow.ellipsis,
@@ -66,24 +66,19 @@ SizedBox gap(String heightORwidth, int idx, Orientation orientation) {
   }
 }
 
-OutlinedButton buttons(String text, Orientation orientation,
-    {required void Function(void Function()) setstate}) {
+OutlinedButton buttons(String text, Orientation orientation, {required void Function(void Function()) setstate}) {
   int idx; // 1:흰색 2:보라색 3:리셋지우개
-  idx = (numb.contains(text) && text != '.')
+  idx = (GyaeSan25.to.number.contains(text) && text != '.')
       ? 1
-      : (giho.contains(text) || text == '.' || text == '=')
+      : (GyaeSan25.to.symbol.contains(text) || text == '.' || text == '=')
           ? 2
           : 3;
 
   OutlinedButton button = OutlinedButton(
       style: OutlinedButton.styleFrom(
           fixedSize: switch (idx) {
-            1 || 2 => orientation == Orientation.portrait
-                ? const Size(70, 70)
-                : const Size(94, 40),
-            3 => orientation == Orientation.portrait
-                ? const Size(155, 47)
-                : const Size(271, 40),
+            1 || 2 => orientation == Orientation.portrait ? const Size(70, 70) : const Size(94, 40),
+            3 => orientation == Orientation.portrait ? const Size(155, 47) : const Size(271, 40),
             _ => Size(0, 0),
           },
           foregroundColor: switch (idx) {
@@ -124,7 +119,7 @@ OutlinedButton buttons(String text, Orientation orientation,
           )),
       onPressed: () {
         setstate(() {
-          gs25(text);
+          GyaeSan25.to.gs25(text);
         });
       },
       child: Text(text));
